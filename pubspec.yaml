@@ -31,6 +31,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_keyboard_visibility: ^5.4.1
+  shared_preferences: ^2.1.2
 
 
 

@@ -1,3 +1,9 @@
+import 'package:class_dash/pages/attendance.dart';
+import 'package:class_dash/pages/course_generator.dart';
+import 'package:class_dash/pages/progress_report.dart';
+import 'package:class_dash/pages/report_card.dart';
+import 'package:class_dash/pages/schedule.dart';
+import 'package:class_dash/pages/teachers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -129,8 +135,14 @@ class _ClassDashState extends State<ClassDash> {
       initialRoute: '/intro_screen',
       routes: {
         '/intro_screen': (context) => const IntroScreen(),
-        '/login_page': (context) => LoginPage(key: UniqueKey()),
+        '/login_page': (context) => const LoginPage(),
         '/home_screen': (context) => const HomeScreen(),
+        '/teachers_page': (context) => const TeachersPage(),
+        '/course_generator': (context) => const CourseGeneratorPage(),
+        '/class_schedule': (context) => const SchedulePage(),
+        '/attendance_page': (context) => const AttendancePage(),
+        '/progress_report': (context) => const ProgressReportPage(),
+        '/report_card': (context) => const ReportCardPage(),
       },
       debugShowCheckedModeBanner: false,
     );

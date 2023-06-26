@@ -189,7 +189,6 @@ class CustomLoginButton extends StatefulWidget {
 }
 
 class _CustomLoginButtonState extends State<CustomLoginButton> {
-  bool _isButtonPressed = false;
   bool _isIndicatorVisible = false;
   double _opacity = 1.0;
 
@@ -200,13 +199,11 @@ class _CustomLoginButtonState extends State<CustomLoginButton> {
     return GestureDetector(
       onTapDown: (details) {
         setState(() {
-          _isButtonPressed = true;
-          _opacity = 0.5;
+          _opacity = 0.7;
         });
       },
       onTapUp: (details) {
         setState(() {
-          _isButtonPressed = false;
           _isIndicatorVisible = true;
           _opacity = 1.0;
         });
@@ -221,7 +218,6 @@ class _CustomLoginButtonState extends State<CustomLoginButton> {
       },
       onTapCancel: () {
         setState(() {
-          _isButtonPressed = false;
           _isIndicatorVisible = false;
           _opacity = 1.0;
         });
