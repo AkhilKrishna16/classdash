@@ -223,30 +223,6 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            label: 'Courses',
-            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_today),
-            label: 'Calendar',
-            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
-            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-          ),
-        ],
-      ),
     );
   }
 }

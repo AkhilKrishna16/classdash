@@ -1,5 +1,6 @@
 import 'package:class_dash/pages/attendance.dart';
 import 'package:class_dash/pages/course_generator.dart';
+import 'package:class_dash/pages/grades.dart';
 import 'package:class_dash/pages/individual_page.dart';
 import 'package:class_dash/pages/progress_report.dart';
 import 'package:class_dash/pages/report_card.dart';
@@ -29,7 +30,7 @@ class ClassDash extends StatefulWidget {
 
 class _ClassDashState extends State<ClassDash> {
   var appearanceDark = false;
-  ThemeMode themeMode = ThemeMode.light;
+  ThemeMode themeMode = ThemeMode.dark;
 
   void toggleAppearance() {
     setState(() {
@@ -133,7 +134,7 @@ class _ClassDashState extends State<ClassDash> {
       darkTheme: _darkMode(),
       themeMode: themeMode,
       theme: _lightMode(),
-      initialRoute: '/intro_screen',
+      initialRoute: '/grades',
       routes: {
         '/intro_screen': (context) => const IntroScreen(),
         '/login_page': (context) => const LoginPage(),
@@ -145,6 +146,7 @@ class _ClassDashState extends State<ClassDash> {
         '/progress_report': (context) => const ProgressReportPage(),
         '/report_card': (context) => const ReportCardPage(),
         '/individual_page': (context) => const IndividualPage(),
+        '/grades': (context) => const GradesPage(),
       },
       debugShowCheckedModeBanner: false,
     );

@@ -28,7 +28,32 @@ class _CourseGeneratorPageState extends State<CourseGeneratorPage> {
       'name': 'PLTW Introduction to Engineering Design',
       'description':
           'Work with engineering principles; model and design solutions to problems; communicate solutions; learn about various engineering disciplines and careers.',
-    }
+    },
+    {
+      'name': 'PLTW Introduction to Engineering Design',
+      'description':
+          'Work with engineering principles; model and design solutions to problems; communicate solutions; learn about various engineering disciplines and careers.',
+    },
+    {
+      'name': 'PLTW Introduction to Engineering Design',
+      'description':
+          'Work with engineering principles; model and design solutions to problems; communicate solutions; learn about various engineering disciplines and careers.',
+    },
+    {
+      'name': 'PLTW Introduction to Engineering Design',
+      'description':
+          'Work with engineering principles; model and design solutions to problems; communicate solutions; learn about various engineering disciplines and careers.',
+    },
+    {
+      'name': 'PLTW Introduction to Engineering Design',
+      'description':
+          'Work with engineering principles; model and design solutions to problems; communicate solutions; learn about various engineering disciplines and careers.',
+    },
+    {
+      'name': 'PLTW Introduction to Engineering Design',
+      'description':
+          'Work with engineering principles; model and design solutions to problems; communicate solutions; learn about various engineering disciplines and careers.',
+    },
   ];
 
   @override
@@ -137,6 +162,7 @@ class _CourseGeneratorPageState extends State<CourseGeneratorPage> {
                           );
                         },
                         child: Container(
+                          margin: EdgeInsets.only(bottom: 1 / 40 * height),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.all(
                               Radius.circular(1 / 50 * height),
