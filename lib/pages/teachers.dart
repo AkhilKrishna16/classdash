@@ -21,7 +21,7 @@ class _TeachersPageState extends State<TeachersPage> {
       {'name': 'Jane Doe', 'email': 'doe.jane@fisd.org'},
     ];
     var height = MediaQuery.of(context).size.height;
-    var width = MediaQuery.of(context).size.width;
+    // var width = MediaQuery.of(context).size.width;
 
     var valueColor = Theme.of(context).scaffoldBackgroundColor == Colors.black
         ? const Color.fromARGB(255, 200, 200, 200)

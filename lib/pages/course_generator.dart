@@ -11,6 +11,7 @@ class CourseGeneratorPage extends StatefulWidget {
 class _CourseGeneratorPageState extends State<CourseGeneratorPage> {
   var queryController = TextEditingController();
   var random = Random();
+  var value = true;
 
   var differentLabelTexts = [
     'What do you want to learn?',
@@ -20,7 +21,9 @@ class _CourseGeneratorPageState extends State<CourseGeneratorPage> {
     'What are topics that you like?',
   ];
 
-  var generatedCourses = [
+  //whenever we populate the list, setState the change of the list whenever it is populated with the actual code
+
+  List<Map<String, String>> generatedCourses = [
     {
       'name': 'PLTW Introduction to Engineering Design',
       'description':
@@ -119,7 +122,20 @@ class _CourseGeneratorPageState extends State<CourseGeneratorPage> {
                     itemCount: generatedCourses.length,
                     itemBuilder: (context, index) {
                       return MaterialButton(
-                        onPressed: () {},
+                        splashColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onPressed: () {
+                          Navigator.pushNamed(
+                            context,
+                            '/individual_page',
+                            arguments: {
+                              'courseName':
+                                  generatedCourses[index]['name'] as String,
+                              'courseDescription': generatedCourses[index]
+                                  ['description'] as String,
+                            },
+                          );
+                        },
                         child: Container(
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.all(
@@ -143,52 +159,77 @@ class _CourseGeneratorPageState extends State<CourseGeneratorPage> {
                             children: [
                               Container(
                                 margin: EdgeInsets.only(
-                                  left: 1 / 50 * width,
-                                  right: 1 / 50 * width,
-                                  bottom: 1 / 50 * height,
+                                  left: 1 / 20 * width,
+                                  right: 1 / 20 * width,
+                                  bottom: 1 / 70 * height,
                                 ),
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    margin: EdgeInsets.only(
-                                      top: 1 / 50 * height,
-                                      bottom: 1 / 70 * height,
-                                    ),
-                                    child: Container(
-                                      width: 5 / 6 * width,
-                                      child: Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      margin: EdgeInsets.only(
+                                        top: 1 / 50 * height,
+                                        bottom: 1 / 70 * height,
+                                      ),
+                                      child: Container(
+                                        width: 4 / 6 * width,
                                         child: Text(
                                           generatedCourses[index]['name']
                                               as String,
                                           style: TextStyle(
                                             fontFamily: 'DM Sans',
                                             fontWeight: FontWeight.bold,
-                                            fontSize: 1 / 24 * width,
+                                            fontSize: 1 / 43 * height,
+                                            color: valueColor,
                                             overflow: TextOverflow.ellipsis,
                                           ),
                                           maxLines: 2,
                                         ),
                                       ),
                                     ),
-                                  ),
-                                  Container(
-                                    width: 2 / 3 * width,
-                                    child: Text(
-                                      generatedCourses[index]['description']
-                                          as String,
-                                      style: TextStyle(
-                                        fontFamily: 'DM Sans',
-                                        fontSize: 1 / 32.13 * width,
-                                        overflow: TextOverflow.ellipsis,
+                                    Container(
+                                      width: 1 / 2 * width,
+                                      child: Row(
+                                        children: [
+                                          Flexible(
+                                            child: Text(
+                                              generatedCourses[index]
+                                                  ['description'] as String,
+                                              style: TextStyle(
+                                                fontFamily: 'DM Sans',
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 1 / 33 * width,
+                                                overflow: TextOverflow.ellipsis,
+                                                color: Theme.of(context)
+                                                            .scaffoldBackgroundColor ==
+                                                        Colors.white
+                                                    ? const Color.fromARGB(
+                                                        255, 91, 91, 91)
+                                                    : const Color.fromARGB(
+                                                        255, 195, 195, 195),
+                                              ),
+                                              maxLines: 3,
+                                            ),
+                                          ),
+                                        ],
                                       ),
-                                      maxLines: 2,
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
-                              Icon(Icons.arrow_forward_ios),
+                              Container(
+                                margin: EdgeInsets.only(
+                                  right: 1 / 20 * width,
+                                ),
+                                child: Icon(
+                                  Icons.arrow_forward_ios,
+                                  color: Theme.of(context)
+                                              .scaffoldBackgroundColor ==
+                                          Colors.black
+                                      ? Colors.white
+                                      : Colors.black,
+                                ),
+                              ),
                             ],
                           ),
                         ),

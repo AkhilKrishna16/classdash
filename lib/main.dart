@@ -1,5 +1,6 @@
 import 'package:class_dash/pages/attendance.dart';
 import 'package:class_dash/pages/course_generator.dart';
+import 'package:class_dash/pages/individual_page.dart';
 import 'package:class_dash/pages/progress_report.dart';
 import 'package:class_dash/pages/report_card.dart';
 import 'package:class_dash/pages/schedule.dart';
@@ -143,6 +144,7 @@ class _ClassDashState extends State<ClassDash> {
         '/attendance_page': (context) => const AttendancePage(),
         '/progress_report': (context) => const ProgressReportPage(),
         '/report_card': (context) => const ReportCardPage(),
+        '/individual_page': (context) => const IndividualPage(),
       },
       debugShowCheckedModeBanner: false,
     );
