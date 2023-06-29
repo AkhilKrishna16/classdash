@@ -30,7 +30,7 @@ class ClassDash extends StatefulWidget {
 
 class _ClassDashState extends State<ClassDash> {
   var appearanceDark = false;
-  ThemeMode themeMode = ThemeMode.dark;
+  ThemeMode themeMode = ThemeMode.light;
 
   void toggleAppearance() {
     setState(() {
